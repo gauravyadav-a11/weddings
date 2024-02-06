@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DESTINATION WEDDING</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+    <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/plan.css"/>
+  </head>
+  
+  <body>
+   <div id="header" class="col-md-12">
+        <!--<div class="scroll">-->
+            <div id="logo" class="col-md-12" align="center">
+                <a href="/"><img src="/static/logo.png"/></a>
+            </div>
+            
+            <div id="menu" class="col-md-12" align="center"> 
+             <div class="col-md-1"></div>
+              <div class="col-md-3" align="center"><a href="/destinations"><b>Check Destination</b></a></div>
+              <div class="col-md-2" align="center"><a href="/plan_step1"><b>Plan Trips</b></a></div>
+              <div class="col-md-2" align="center"><a href="/gallery"><b>Visit Galleries</b></a></div>
+              <div class="col-md-3" align="center"><a href="/photographerlist"><b>View Photographers</b></a></div>
+            <div class="col-md-1"></div>
+            </div>
+       <!-- </div>-->
+    </div>
+
+    <!--EndHeader-->
+    <!--BeginMain-->
+    <br>
+    <div id="homepage">
+      <div class="col-md-12" >
+        <div class="col-md-1"></div>
+        <div id="maincontent" class="col-md-10" align="center">
+        <h3>STEP 3 : Review And More Information</h3>
+        <div class="keyline"><hr></div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+        <div class="col-md-4" align="left">
+        </div>
+
+        <div id="more" class="col-md-4" align="left">
+          <form action="" method="POST">
+            <h4 style="text-align:center;">Add Your Available Date And Requirement Of Your Plan</h4>
+            <div class="col-md-12">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+              <p id="select"> <span>Destination : </span>{{city}}</p>
+              <p id="select"> <span>Photographer : </span>{{photographer}}</p>
+              <p id="select"><span> Available Date : </span></p><p id="select"><input type="text" placeholder="MM/DD/YYYY" name="orderdate" value="{{ request.form.orderdate }}"></p>
+              <p id="select"> <span>Your Requirement : </span></p>
+              <p id="select"><textarea type="text" placeholder="Any Requirement You Want To Let Photographer Know..." name="orderrequirement" value="{{ request.form.orderrequirement }}"></textarea></p> 
+              <p><input style="margin-left:80px" class="btn btn-default" type="submit" value="Plan It"></p>
+              </div>
+               <div class="col-md-2"></div>
+            </div>
+          </form>
+        </div>
+         <div class="col-md-4" align="left"></div>
+      </div>
+    </div>
+<!--EndMain-->
+    <!--BeginFooter-->
+      <div id="footer" class="col-md-12">
+        <div id="copyright" class="col-md-3" > <p>&nbsp;</p></div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p><a class="copyright" href="/">Destination Wedding </a>© 2015</p>
+      </div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p>Created by <a class="copyright" href="kamengwu.com">Kameng Wu</a></p>
+      </div>
+        <div id="copyright" class="col-md-3" ><p>&nbsp;</p></div>
+    </div>
+    <!--EndFooter-->
+  </body>
+</html>

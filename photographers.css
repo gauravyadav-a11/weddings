@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#portfolios{
+	background-color:#fffffb;
+	padding:20px;
+	margin:40px;
+	height:500px;
+	opacity: .9; 
+    z-index: -0.5;
+    border-radius:5px;
+}
+

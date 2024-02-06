@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DESTINATION WEDDING</title>
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+    <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <!--Gallery-->
+     <link rel="stylesheet" type="text/css" href="/static/css/gallery/demo.css"/>
+     <link rel="stylesheet" type="text/css" href="/static/css/gallery/component.css"/>
+     <script src="/static/js/gallery/modernizr.custom.js"></script>
+<style>
+.grid-gallery figcaption h3{
+  color:#fcabb3;
+ }
+.grid-gallery figcaption h3:hover{
+  color:#f97b87;
+ }
+.grid figcaption{
+  background-color:#f7f5f3;
+ }
+ a{
+  color:#fcabb3;
+ }
+ a:hover{
+  color:#f97b87;
+ }
+</style>
+</head>
+<body>
+  <div id="header">
+        <!--<div class="scroll">-->
+            <div id="logo" class="col-md-12" align="center">
+                <a href="/"><img src="/static/logo.png"/></a>
+            </div>
+            
+            <div id="menu" class="col-md-12" align="center"> 
+             <div class="col-md-1"></div>
+              <div class="col-md-3" align="center"><a href="/destinations"><b>Check Destination</b></a></div>
+              <div class="col-md-2" align="center"><a href="/plan_step1"><b>Plan Trips</b></a></div>
+              <div class="col-md-2" align="center"><a href="/gallery"><b>Visit Galleries</b></a></div>
+              <div class="col-md-3" align="center"><a href="/photographerlist"><b>View Photographers</b></a></div>
+            <div class="col-md-1"></div>
+            </div>
+       <!-- </div>-->
+    </div>
+
+    <!--EndHeader-->
+    <!--BeginMain-->
+     <div class="col-md-12" style="margin-top:60px;" >
+        <div class="col-md-1"></div>
+        <div id="title" class="col-md-10" align="center">
+        <h3 style="color:#85b3dd;">Wedding Gallery Around The World</h3>
+        <div class="keyline"><hr></div>
+        </div>
+        <div class="col-md-1"></div>
+        </div>
+
+    <div class="container" style="margin-bottom:5%;">
+      <div id="grid-gallery" class="grid-gallery">
+        <section class="grid-wrap">
+          <form action="{{ url_for('process_viewportfolio') }}" method="POST">
+          <ul class="grid">
+            <li class="grid-sizer"></li><!-- for Masonry column width -->
+            {%for album in albums%}
+            <li>
+              <figure>
+                <a href="/albumdetail/{{album['id']}}"><img src="{{album['cover']}}" alt="img01"/>
+                <figcaption><h3>{{album['albumname']}}</h3> <p>by {{album['photographername']}}</p></figcaption></a>
+              </figure>
+            </li>
+           {% endfor %} 
+          </ul>
+        </section><!-- // slideshow -->
+      </div><!-- // grid-gallery -->
+    </div>
+    <script src="/static/js/gallery/imagesloaded.pkgd.min.js"></script>
+    <script src="/static/js/gallery/masonry.pkgd.min.js"></script>
+    <script src="/static/js/gallery/classie.js"></script>
+    <script src="/static/js/gallery/cbpGridGallery.js"></script>
+    <script>
+      new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+    </script>
+ <!--EndMain-->
+    <!--BeginFooter-->
+      <div id="footer" class="col-md-12">
+        <div id="copyright" class="col-md-3" > <p>&nbsp;</p></div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p><a class="copyright" href="/">Destination Wedding </a>© 2015</p>
+      </div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p>Created by <a class="copyright" href="kamengwu.com">Kameng Wu</a></p>
+      </div>
+        <div id="copyright" class="col-md-3" ><p>&nbsp;</p></div>
+    </div>
+    <!--EndFooter-->
+</body>
+</html>

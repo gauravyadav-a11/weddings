@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+#maincontent h3{
+  color:#85b3dd;
+  font-size: 22px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+h4{
+	margin-top: 50px;
+	font-size: 17px;
+	color:#9e9e9e;
+	margin-bottom: 40px;
+}
+
+
+select[id="destination"]{
+    width: 280px;
+    height: 34px;
+    background: transparent;
+    border: 1px solid rgba(64,63,61,0.4);
+    cursor: pointer;
+    border-radius: 3px;
+    color: rgba(64,63,61,0.6);
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 0px;
+    outline:none;
+}
+
+input[type=submit]{
+    width: 100px;
+    height: 38px;
+    background: #f97b87;
+    border: 1px solid #f97b87;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #f7f5f3;
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 35px;
+    
+}
+
+input[type=submit]:hover{
+    color:#f7f5f3;
+    background-color:rgba(249,123,135,0.8);
+    border: 1px solid rgba(249,123,135,0.3);
+}
+
+#more{
+    margin-bottom: 100px;
+}
+
+#select{
+    font-size: 16px;
+    padding-top: 2%;
+}
+#select span{
+
+    color:#85b3dd;
+    font-size: 17px;
+}
+
+input[type=text]{
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(64,63,61,0.6);
+    border-radius: 3px;
+    color: #403F3D;
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top:1px;
+    margin-bottom: 5px;
+}
+
+input[type=text]:focus{
+    outline: none;
+    border: 1px solid rgba(150,150,150,0.6);
+}
+
+textarea{
+    width: 250px;
+    height: 100px;
+    background: transparent;
+    border: 1px solid rgba(64,63,61,0.6);
+    border-radius: 3px;
+    color: #403F3D;
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 14px;
+    padding: 4px;
+    resize:none;
+    outline:none;
+}
+
+::-webkit-input-placeholder{
+   font-size: 13px;
+}
+
+::-moz-input-placeholder{
+   font-size:13px;
+}
+
+

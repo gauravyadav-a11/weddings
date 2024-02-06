@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+  <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+ <title>DESTINATION WEDDING</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+     <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+    <script src="/static/js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+<body>
+
+
+<div id="body" class="col-md-12" align="center">  <div id="grad" class="col-md-12" align="center">
+  </div></div>
+ 
+
+
+  <div id="header" class="col-md-12" align="center">
+    <a href="/"><img src="/static/logo.png"/></a>
+    <p>Login As A Photographer</p>
+  </div>
+    <br>
+  <div id="login" class="col-md-12">
+      <form action="" method="post">
+        <div class="col-md-12">
+        <p id="content">Username</p>
+        <input type="text" name="username" value="{{ request.form.username }}" >
+        <p id="content">Password</p>
+        <input type="password" name="password" value="{{ request.form.password }}">
+         <input type="hidden" name="pid" value="{{request.form.pid}}">
+        </div>
+        <div class="col-md-12" align="center">
+          <input type="submit" value="Login">
+            {% if error %}
+              <p id="error"><strong>Error:</strong> {{ error }}</p>
+            {% endif %}
+            <p id="hint">Don't have an account yet?&nbsp;<a href="/register_p">Go Register</a></p>
+        </div>
+      </form>
+  </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+  </body>
+</html>

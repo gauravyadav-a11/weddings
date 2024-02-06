@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DESTINATION WEDDING</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+    <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+<script>
+  $(window).scroll(function(e){ 
+  $el = $('.scroll'); 
+  if ($(this).scrollTop() > 10 && $el.css('position') != 'fixed'){ 
+    $('.scroll').css({'position': 'fixed', 'top': '0px'}); 
+  }
+  if ($(this).scrollTop() < 10 && $el.css('position') == 'fixed')
+  {
+    $('.scroll').css({'position': 'static', 'top': '0px'}); 
+  } 
+});
+  </script>
+
+</head>
+  
+  <body>
+    
+  	<div id="status">
+      {% if username %} 
+      <div id="log" class="col-md-4" align="center">
+         <p> &nbsp; &nbsp;</p>
+      </div>
+      <div id="log" class="col-md-3" align="center">
+        <p> Welcome,  &nbsp; &nbsp; {{username}}</p>
+      </div>
+      <div id="log" class="col-md-1" align="center">
+        <p><a href="/profile">Profile</a></p>
+      </div>
+      <div id="log" class="col-md-2" align="center">
+        <p><a href="/vieworder">Your Order</a></p>
+      </div>
+      <div id="log" class="col-md-1" align="center">
+        <p><a href="/logout">Logout</a></p>
+      </div>
+      <div id="log" class="col-md-1" align="center">
+        <p> &nbsp; &nbsp;</p>
+      </div>
+      {% else %}
+      <div id = "loginregister" class="col-md-6" align="center">
+        <p>If you are a trip planner &nbsp; <a href="/login_c">Login</a> or <a href="/register_c">Register</a> </p>
+      </div>
+      <div id = "loginregister" class="col-md-6" align="center">
+        <p>If you are a photographer &nbsp; <a href="/login_p">Login</a> or <a href="/register_p">Register</a></p>
+      </div>
+      {% endif %}
+  	</div>
+
+    <div id="header">
+<div class="scroll">
+            <div id="logo" class="col-md-12" align="center">
+                <a href="/"><img src="/static/logo.png"/></a>
+            </div>
+            
+            <div id="menu" class="col-md-12" align="center"> 
+             <div class="col-md-1"></div>
+              <div class="col-md-3" align="center"><a href="/destinations"><b>Check Destination</b></a></div>
+              <div class="col-md-2" align="center"><a href="/plan_step1"><b>Plan Trips</b></a></div>
+              <div class="col-md-2" align="center"><a href="/gallery"><b>Visit Galleries</b></a></div>
+              <div class="col-md-3" align="center"><a href="/photographerlist"><b>View Photographers</b></a></div>
+            <div class="col-md-1"></div>
+            </div>
+</div>
+    </div>
+
+    <!--EndHeader-->
+    <!--BeginMain-->
+    <br>
+
+      <div id="intro" class="col-md-6" align="left">
+        <h4>Choose Destination of Your Happiness</h4>
+        <img src="" width="auto" height="auto"/>
+      </div>
+
+      <div id="intro" class="col-md-6" align="left">
+        <h4>Share Perfect Photos You Record</h4>
+      </div>
+
+      <div id="intro" class="col-md-6" align="left">
+        <h4>Travel with Lightest Luggage</h4>
+      </div>
+
+      <div id="intro" class="col-md-6" align="left">
+        <h4>Witness Different Interesting Stories</h4>
+      </div>
+
+      <div id="intro" class="col-md-6" align="left">
+        <h4>Special Wedding with Special Customs</h4>
+      </div>
+
+      <div id="intro" class="col-md-6" align="left">
+        <h4>Show Yourself To The World</h4>
+        <p>dasnvoiajaofjanao</p>
+      </div>
+    </div>
+ </body>
+    <!--EndMain-->
+    <!--BeginFooter-->
+      <div id="footer" class="col-md-12">
+        <div class="col-md-3" ></div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p><a class="copyright" href="/">Destination Wedding </a>© 2015</p>
+      </div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p>Created by <a class="copyright" href="kamengwu.com">Kameng Wu</a></p>
+      </div>
+        <div class="col-md-3" ></div>
+    </div>
+    <!--EndFooter-->
+ 
+</html>

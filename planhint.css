@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+#body{
+    position: absolute;
+    top: -2px;
+    left: -20px;
+    right: -20px;
+    bottom: -4px;
+    width: auto;
+    height: auto;
+    background-image: url('/static/8.jpg');
+    background-size: cover;
+    -webkit-filter: blur(5px);
+}
+
+#grad{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    bottom: -10px;
+    width: auto;
+    height: auto;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    opacity: 0.4;
+}
+
+
+h3{
+	font-size:26px;
+	color:#83b5dd;
+	margin-top:8%;
+	margin-bottom:4%;
+    margin-left: -30px;
+
+}
+
+
+h4 span{
+	color:#83b5dd;
+    font-size: 20px;
+}
+#content{
+	margin-top:30px; 
+	font-size:16px;
+    text-align: left;
+
+}
+#content a{
+	font-size:19px;
+
+}
+
+#cp {
+    margin-bottom: 10%;
+    margin-left: 50px;
+}
+

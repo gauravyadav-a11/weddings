@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+  <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+ <title>DESTINATION WEDDING</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+     <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css"/>
+    <script src="/static/js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+<body>
+
+<div id="body" class="col-md-12" align="center">  <div id="grad" class="col-md-12" align="center">
+  </div></div>
+ 
+
+
+  <div id="header" class="col-md-12" align="center">
+    <a href="/"><img src="/static/logo.png"/></a>
+    <p> Register As A Trip Planner</p>
+  </div>
+    <br>
+  <div id="login" class="col-lg-12" align="center">
+      <form action="" method="post">       
+        <div class="col-sm-5" aling="left">
+        <h3>Create Account</h3>
+        <p id="content">Username</p>
+        <input type="text" name="username" value="{{ request.form.username }}" >
+        <p id="content">Password</p>
+        <input type="password" name="password" value="{{ request.form.password }}">
+        <h3>Connect Information</h3>
+        <p id="content">Email Address</p>
+        <input type="text" name="coupleemail" value="{{ request.form.coupleemail }}">
+        <p id="content">Phone Number</p>
+        <input type="text" name="couplephone" value="{{ request.form.couplephone }}">
+        </div>
+
+        <div class="col-sm-5" align="left">
+        <h3>For More Information</h3>
+        <p id="content">Prefered Name</p>
+         <input type="text" name="couplename" value="{{ request.form.couplename }}"> 
+         <p id="content">A Brief Intro About You</p>
+         <p id="content"><textarea name="coupleinfo" value="{{ request.form.coupleinfo }}"></textarea></p>
+          <input type="hidden" name="cid" value="{{request.form.cid}}">
+         <p><input type="submit" value="Register"></p>
+        {% if error %}
+        <p id="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+      <p id="content">Already Have Account?&nbsp;&nbsp;<a href="/login_c">Go Login</a></p>
+        </div>
+    
+      </form>
+  </div>
+
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+  </body>
+</html>

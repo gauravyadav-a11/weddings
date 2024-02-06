@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+    background-color: #fffffb;
+    background-size: cover;
+    font-family: 'oxygen';
+    height:100%;	
+}
+
+/* login */
+
+#log{
+	padding-top:5px;
+	padding-bottom: 5px;
+	background-color: #f7f5f3;
+}
+
+#log p{
+ 	color:#f97b87;
+ 	margin-bottom:0px;
+ 	margin-right: 30px;
+}
+
+#loginregister{
+	padding-top:5px;
+	background-color: #f7f5f3;
+	padding-bottom:5px;
+}
+#loginregister p{
+	margin-bottom: 0px;
+}
+
+/*.scroll {
+    background-color: #c0c0c0;
+    top:0;
+    width:100%;
+    z-index:100;
+}*/
+
+
+#logo{
+	background-color:#fffffb;
+	padding-top:10px;
+	padding-bottom:5px;
+	padding-left: 0px;
+	padding-right:0px;
+	}
+
+#logo img{
+	width: 403px;
+	height: 77px;
+
+}
+
+#menu{
+	font-size:17px;
+	background-color:#fffffb;
+	padding-top:10px;
+	padding-bottom:15px;
+	font-family: 'Cinzel';
+	font-weight: 500;
+	box-shadow: 0 0.5px 1px rgba(0,0,0,.25);
+	}
+#menu a{
+	color:#9e9e9e;
+}
+
+#menu a:hover{
+	color:#f97b87;
+}
+
+#copyright{
+	font-size:16px;
+	background-color:#fffffb;
+	padding-top:15px;
+	padding-bottom:10px;
+	font-weight: 500;
+	font-family: 'Cinzel';	
+	
+}
+
+#footer{
+	box-shadow: 0 -0.55px 1px rgba(0,0,0,.25);
+	position:fixed;
+	width:100%;
+	bottom:0;
+	z-index: 1;
+}
+
+p {
+	color:#9e9e9e;
+}
+
+a{
+	color:#fcabb3;
+}
+
+a #username{
+	color:#83b5dd;
+}
+
+a:link { 
+	text-decoration: none;
+}
+
+a:hover{
+	color:#f97b87;
+}
+
+#title h3{
+  color:#85b3dd;
+  font-size: 22px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+/* homepage*/
+

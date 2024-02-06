@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DESTINATION WEDDING</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+    <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+     <link rel="stylesheet" type="text/css" href="/static/css/plist.css"/>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+$('#result').hide();
+$('a.reveal').click(function(){
+$('span', this).toggle();
+$('#result').toggle('fast');
+});
+});
+</script>
+
+
+</head>
+<body>
+  <div id="header">
+        <!--<div class="scroll">-->
+            <div id="logo" class="col-md-12" align="center">
+                <a href="/"><img src="/static/logo.png"/></a>
+            </div>
+            
+            <div id="menu" class="col-md-12" align="center"> 
+             <div class="col-md-1"></div>
+              <div class="col-md-3" align="center"><a href="/destinations"><b>Check Destination</b></a></div>
+              <div class="col-md-2" align="center"><a href="/plan_step1"><b>Plan Trips</b></a></div>
+              <div class="col-md-2" align="center"><a href="/gallery"><b>Visit Galleries</b></a></div>
+              <div class="col-md-3" align="center"><a href="/photographerlist"><b>View Photographers</b></a></div>
+            <div class="col-md-1"></div>
+            </div>
+       <!-- </div>-->
+    </div>
+
+    <!--EndHeader-->
+    <!--BeginMain-->
+<div class="col-md-12" style="margin-bottom:7%;">
+  
+  <div class="col-md-12" >
+                <div class="col-md-1"></div>
+                <div id="maincontent" class="col-md-10" align="center">
+                <h3>STEP 2 : Choose A Photographer in Selected Destination</h3>
+                <div class="keyline"><hr></div>
+                </div>
+                <div class="col-md-1"></div>
+              </div>    
+
+    <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+          <div class="col-md-1"></div>
+            <div id="item active" class="col-md-10" align="center">
+                  <h4>Here Are The Photographers in {{city}}</h4>
+                  <ul class="thumbs">
+                  {% for planphotographer in planphotographers %} 
+                  <li class="col-sm-3">
+                  <form action="{{ url_for('process_step2') }}" method="POST">
+                    <div class="thumb">  
+                      <a href="#"><img src="{{planphotographer['portrait']}}" alt=""></a>
+                    </div>
+                    <div class="caption">
+                      <input type="hidden" name="choosepid" value ="{{planphotographer['id']}}">
+                      <h5>{{ planphotographer['photographername'] }}</h5>
+                      <p><input class="btn btn-default" type="submit" value="Select"/></p> 
+                    </div>
+                  </form> 
+                  </li>
+                  {% endfor %} 
+                  </ul>   
+                </div>
+            <div class="col-md-1"></div> 
+            </div><!-- carousel-inner -->                           
+    </div><!-- /#myCarousel -->    
+</div><!-- /.col-xs-12 -->   
+
+<!--EndMain-->
+    <!--BeginFooter-->
+      <div id="footer" class="col-md-12">
+        <div id="copyright" class="col-md-3" > <p>&nbsp;</p></div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p><a class="copyright" href="/">Destination Wedding </a>© 2015</p>
+      </div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p>Created by <a class="copyright" href="kamengwu.com">Kameng Wu</a></p>
+      </div>
+        <div id="copyright" class="col-md-3" ><p>&nbsp;</p></div>
+    </div>
+    <!--EndFooter-->
+  </body>
+</html>       
+   

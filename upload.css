@@ -1,0 +1,133 @@
+
+#body{
+	position: absolute;
+	top: -2px;
+	left: -20px;
+	right: -20px;
+	bottom: -4px;
+	width: auto;
+	height: auto;
+	background-image: url('/static/8.jpg');
+	background-repeat: repeat;
+	-webkit-filter: blur(5px);
+	z-index: 0;
+}
+
+#grad{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	right: 50px;
+	bottom: -10px;
+	width: auto;
+	height: auto;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.0)), color-stop(80%,rgba(255,255,255,0.85))); /* Chrome,Safari4+ */
+	z-index: 2;
+	opacity: 0.4;
+}
+#header h5{
+    color: #85b3dd;
+    font-size:26px;
+    margin-top: 70px;
+}
+#header img{
+    width: 403px;
+    height:77px;
+    margin-top: 50px;
+}
+
+#login{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#content{
+    color:rgba(64,63,61,0.7);
+    font-size:16px;
+    padding-top:15px;
+    margin-bottom:5px;
+    margin-left:-140px;   
+}
+
+
+#hint{
+    color:rgba(64,63,61,0.7);
+    font-size:16px;
+    padding-top:15px;
+    margin-bottom:0px;
+    
+}
+
+#login p{
+    margin-top: 0px;
+    color:rgba(64,63,61,0.7);
+}
+
+#error p{
+    color:#83b5dd;
+    font-size:13.5px;
+    padding-top:10px;
+    margin-top:10px;
+}
+
+#login a{
+    font-size:15px;
+}
+
+
+#login input[type=file]{
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(64,63,61,0.6);
+    border-radius: 3px;
+    color: #403F3D;
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 0px;
+}
+
+
+#login select[id="aid"]{
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(64,63,61,0.6);
+    cursor: pointer;
+    border-radius: 3px;
+    color: rgba(64,63,61,0.6);
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px;
+    margin-top: 0px;
+    outline:none;
+}
+
+
+#login input[type=submit]{
+    width: 250px;
+    height: 35px;
+    background: #f97b87;
+    border: 1px solid #f97b87;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #f7f5f3;
+    font-family: 'OXYGEN', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+}
+
+#login input[type=submit]:hover{
+    color:#f7f5f3;
+    background-color:rgba(249,123,135,0.8);
+    border: 1px solid rgba(249,123,135,0.7);
+}
+
+
+
+
+

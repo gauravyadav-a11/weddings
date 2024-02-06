@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DESTINATION WEDDING</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+
+    <!--font-->
+    <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+     <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+     <link rel="stylesheet" type="text/css" href="/static/css/albums.css"/>
+  </head>
+
+  <body>
+
+    <div id="header">
+        <!--<div class="scroll">-->
+            <div id="logo" class="col-md-12" align="center">
+                <a href="/"><img src="/static/logo.png"/></a>
+            </div>
+            
+            <div id="menu" class="col-md-12" align="center"> 
+             <div class="col-md-1"></div>
+              <div class="col-md-3" align="center"><a href="/destinations"><b>Check Destination</b></a></div>
+              <div class="col-md-2" align="center"><a href="/plan_step1"><b>Plan Trips</b></a></div>
+              <div class="col-md-2" align="center"><a href="/gallery"><b>Visit Galleries</b></a></div>
+              <div class="col-md-3" align="center"><a href="/photographerlist"><b>View Photographers</b></a></div>
+            <div class="col-md-1"></div>
+            </div>
+       <!-- </div>-->
+    </div>
+
+    <!--EndHeader-->
+    <!--BeginMain-->
+<div id= "main" class="col-md-12">
+ <div id="create" class="col-md-12" align="center" >
+        <div class="col-md-1"></div>
+        <div id="reatealbums" class="col-md-10" align="center">
+        <h3 style="color:#85b3dd;">Create Your Albums</h3>
+        <div class="keyline"><hr></div>
+        </div>
+        <div class="col-md-1"></div>
+        </div>
+    </div>
+    <div class="col-md-12" align="center">
+         <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <form class="form-inline" action="{{ url_for('albums') }}" method="post">
+            <div class="form-group">
+                <label id="inputname" for="input">Album Name</label>&nbsp; &nbsp;
+                <input id="input" style="width:150px;" type="text" placeholder="e.g. French Love" name="albumname" value="{{ request.form.albumname }}">
+            </div>
+             &nbsp; &nbsp; &nbsp; 
+            <div class="form-group">
+                <label id="inputname" for="input">Album Information</label>&nbsp; &nbsp;
+                <input id="input" style="width:300px;"  type="text" placeholder="e.g. 01/01/2015 or Couples Stains" name="information" value="{{ request.form.information }}">
+            </div>
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <button id="createbtn" type="submit" class="btn btn-default">Create Album</button>
+        </form> </div> 
+        <div class="col-md-1"></div>    
+    </div>
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+</div>
+
+<div id="albums" class="col-md-12">
+   <div class="col-md-12" >
+        <div class="col-md-1"></div>
+        <div id="create" class="col-md-10" align="center">
+        <h3 style="color:#85b3dd;">Manage Your Albums</h3>
+        <div class="keyline"><hr></div>
+        </div>
+        <div class="col-md-1"></div>
+        </div>
+    </div>
+  {% if albums %}
+  <div id="showalbums" class="col-md-12" style="margin-bottom:12%">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        {% for album in albums %} 
+      <div class="col-md-12" style="margin-top:2%;">
+        <div class="col-md-4" align="center">
+          <p id="content"><img src="{{album['cover']}}"></P>
+        </div>
+        <div class="col-md-4" align="left" style="padding-left:30px;">
+          <h4 style="color:#85b3dd;">Album Information</h4><hr>
+            <p>Name : <a href="/albumdetail/{{album['id']}}" value={{album['id']}}><b>{{ album['albumname'] }}</b></a></p>
+            <p value={{album['id']}}>Album Information : {{ album['information'] }}</p>
+        </div>
+        <div class="col-md-4" align="center">
+          <h4>  </h4>
+          <h4> </h4>
+          <h4> </h4>
+            <p><a href="javascript:void(0)" onclick="submit_rename_form({{album['id']}})">Rename Album</a></p>
+            <p><a href="/albums/{{album['id']}}/delete">Delete Album</a></p>
+          </div>
+        </div>
+        {% endfor %} 
+    </div> 
+    <div class="col-md-1"></div>
+  </div>
+{% endif %}
+
+<script>
+function submit_rename_form(aid) {
+    var album_newname = prompt('Please enter new albums name:'); 
+    document.write("<form method=\"post\" id=\"editalbums\" action=\"/albums/edit\">");
+    document.write("<input type=\"hidden\" name=\"aid\" value=\"" + aid + "\">"); 
+    document.write("<input type=\"hidden\" name=\"album_newname\" value=\"" + album_newname + "\">"); 
+    document.write("<input type=\"submit\" name=\"Go2\" value=\"Go\"></form>");  
+    document.getElementById("editalbums").submit();
+}
+</script>
+</div><!--main-->
+
+    <!--EndMain-->
+    <!--BeginFooter--> 
+      <div id="footer" class="col-md-12">
+        <div class="col-md-3" ></div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p><a class="copyright" href="/">Destination Wedding </a>© 2015</p>
+      </div>
+      <div id="copyright" class="col-md-3" align="center">
+        <p>Created by <a class="copyright" href="kamengwu.com">Kameng Wu</a></p>
+      </div>
+        <div class="col-md-3" ></div>
+    </div>
+    <!--EndFooter-->
+</body> 
+</html>
